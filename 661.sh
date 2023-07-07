@@ -38,6 +38,7 @@ release="Centos"
 else 
 red "不支持你当前系统，请选择使用Ubuntu,Debian,Centos系统。" && rm -f CFwarp.sh && exit
 fi
+echo
 vsid=`grep -i version_id /etc/os-release | cut -d \" -f2 | cut -d . -f1`
 sys(){
 [ -f /etc/os-release ] && grep -i pretty_name /etc/os-release | cut -d \" -f2 && return
