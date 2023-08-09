@@ -38,9 +38,12 @@ fi
 }
 
 cfwarpIP(){
+
+if [[ ! -f "warpendpoint" ]]; then
 echo "下载warp优选程序"
 if [[ -n $cpu ]]; then
 curl -L -o warpendpoint -# --retry 2 https://gitlab.com/rwkgyg/CFwarp/raw/main/point/$cpu
+fi
 fi
 }
 
