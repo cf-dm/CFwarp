@@ -1,3 +1,4 @@
- 23.11.30 v1.9更新内容：
- 修改：首次输入脚本即检测 Netflix 与 ChatGPT 解锁情况
+ 23.12.1 v1.9.1更新内容：
+ 1：首次输入脚本即检测 Netflix 与 ChatGPT 解锁情况
+ 2：使用更加严格的方式检测Netflix解锁情况
  详见：https://ygkkk.blogspot.com/2022/09/cfwarp-script.html
