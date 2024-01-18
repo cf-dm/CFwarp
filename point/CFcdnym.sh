@@ -5,6 +5,7 @@ echo "请稍等……"
 pkg install curl 
 pkg install wget
 pkg install lzip
+pkg update
 apk add openssh curl wget lzip
 if [ -x "$(command -v apt-get)" ]; then
 apt update -y >/dev/null 2>&1
