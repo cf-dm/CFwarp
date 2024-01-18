@@ -2,13 +2,13 @@
 export LANG=en_US.UTF-8
 if [ ! -f yg_update ]; then
 echo "请稍等……"
-if grep -qi "alpine" /etc/os-release; then
+if [ -e "/etc/os-release" ] && grep -qi "alpine" /etc/os-release; then
 apk add openssh curl wget lzip
 else
-pkg install curl 
-pkg install wget
-pkg install lzip
-pkg update
+pkg install curl 2>/dev/null
+pkg install wget 2>/dev/null
+pkg install lzip 2>/dev/null
+pkg update 2>/dev/null
 fi
 touch yg_update
 fi
