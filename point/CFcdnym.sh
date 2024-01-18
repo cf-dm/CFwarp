@@ -4,25 +4,6 @@ if [ ! -f yg_update ]; then
 echo "请稍等……"
 if grep -qi "alpine" /etc/os-release; then
 apk add openssh curl wget lzip
-elif [ -x "$(command -v apt-get)" ]; then
-apt update -y
-apt install lzip unzip qrencode -y
-elif [ -x "$(command -v yum)" ]; then
-vsid=$(grep -i version_id /etc/os-release 2>/dev/null | cut -d \" -f2 | cut -d . -f1)
-if [[ ${vsid} =~ 8 ]]; then
-cd /etc/yum.repos.d/ && mkdir backup && mv *repo backup/ 
-curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
-sed -i -e "s|mirrors.cloud.aliyuncs.com|mirrors.aliyun.com|g " /etc/yum.repos.d/CentOS-*
-sed -i -e "s|releasever|releasever-stream|g" /etc/yum.repos.d/CentOS-*
-yum clean all && yum makecache
-cd
-fi
-yum update -y
-yum install epel-release -y
-yum install lzip unzip qrencode -y
-elif [ -x "$(command -v dnf)" ]; then
-dnf update -y
-dnf install lzip unzip qrencode -y 
 else
 pkg install curl 
 pkg install wget
