@@ -5,7 +5,9 @@ echo "请稍等……"
 
 pkg upgrade
 echo 1
-pkg install curl wget lzip
+pkg install curl 
+pkg install wget
+pkg install lzip
 echo 1
 apk add openssh curl wget lzip
 echo 1
