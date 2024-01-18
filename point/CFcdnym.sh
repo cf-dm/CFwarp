@@ -2,11 +2,14 @@
 export LANG=en_US.UTF-8
 if [ ! -f yg_update ]; then
 echo "请稍等……"
+if grep -qi "alpine" /etc/os-release; then
+apk add openssh curl wget lzip
+else
 pkg install curl 
 pkg install wget
 pkg install lzip
 pkg update
-apk add openssh curl wget lzip
+fi
 if [ -x "$(command -v apt-get)" ]; then
 apt update -y >/dev/null 2>&1
 apt install lzip unzip qrencode -y >/dev/null 2>&1
@@ -18,7 +21,6 @@ elif [ -x "$(command -v dnf)" ]; then
 dnf update -y >/dev/null 2>&1
 dnf install lzip unzip qrencode -y >/dev/null 2>&1
 fi
-
 touch yg_update
 fi
 script_name=$(basename "$BASH_SOURCE")
