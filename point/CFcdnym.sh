@@ -2,15 +2,10 @@
 export LANG=en_US.UTF-8
 if [ ! -f yg_update ]; then
 echo "请稍等……"
-
-pkg upgrade
-echo 1
 pkg install curl 
 pkg install wget
 pkg install lzip
-echo 1
 apk add openssh curl wget lzip
-echo 1
 if [ -x "$(command -v apt-get)" ]; then
 apt update -y >/dev/null 2>&1
 apt install lzip unzip qrencode -y >/dev/null 2>&1
