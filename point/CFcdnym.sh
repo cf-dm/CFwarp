@@ -3,9 +3,9 @@ export LANG=en_US.UTF-8
 if [ ! -f yg_update ]; then
 echo "请稍等……"
 
-pkg upgrade -y
+pkg upgrade
 echo 1
-pkg install curl wget lzip -y
+pkg install curl wget lzip
 echo 1
 apk add openssh curl wget lzip
 echo 1
