@@ -1,7 +1,7 @@
 #!/bin/bash
 export LANG=en_US.UTF-8
 if [ ! -f yg_update ]; then
-yellow "请稍等……"
+echo "请稍等……"
 if [ -x "$(command -v apt-get)" ]; then
 apt update -y >/dev/null 2>&1
 apt install lzip unzip qrencode -y >/dev/null 2>&1
