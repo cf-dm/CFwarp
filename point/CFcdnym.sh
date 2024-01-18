@@ -13,10 +13,10 @@ elif [ -x "$(command -v dnf)" ]; then
 dnf update -y >/dev/null 2>&1
 dnf install lzip unzip qrencode -y >/dev/null 2>&1
 fi
-pkg update -y 
+pkg update
 #pkg upgrade -y
-pkg install curl wget lzip -y 
-apk add openssh curl wget lzip -y 
+pkg install curl wget lzip
+apk add openssh curl wget lzip
 touch yg_update
 fi
 script_name=$(basename "$BASH_SOURCE")
